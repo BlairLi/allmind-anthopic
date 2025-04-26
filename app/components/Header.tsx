@@ -28,7 +28,7 @@ export default function Header() {
             <button className="nav-link">Research</button>
             <button className="nav-link">Commitments</button>
             <button className="nav-link">Learn</button>
-            <Link href="/news" className="nav-link">News</Link>
+            <Link href="/" className="nav-link">News</Link>
           </nav>
 
           <Link 

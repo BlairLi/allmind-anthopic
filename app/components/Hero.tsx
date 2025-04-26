@@ -13,8 +13,8 @@ export default function Hero() {
       <div className="max-w-7xl mx-auto px-6 py-20 relative z-10">
         <div className="w-[60%]">
           <h1 className="text-6xl font-bold leading-tight mb-16">
-            AI <Link href="/research" className="underline-custom">research</Link> and<br />
-            <Link href="/products" className="underline-custom">products</Link> that put<br />
+            AI <Link href="/" className="underline-custom">research</Link> and<br />
+            <Link href="/" className="underline-custom">products</Link> that put<br />
             safety at the frontier
           </h1>
           
