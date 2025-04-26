@@ -5,70 +5,60 @@ const featuredItems = [
     title: "Tracing the thoughts of a large language model",
     category: "Interpretability",
     date: "Mar 27, 2025",
-    href: "/research/tracing-thoughts"
+    href: "/"
   },
   {
     title: "Anthropic Economic Index",
     category: "Societal Impacts",
     date: "Mar 27, 2025",
-    href: "/research/economic-index"
+    href: "/"
   },
   {
     title: "Claude 3.7 Sonnet and Claude Code",
     category: "Product",
     date: "Feb 24, 2025",
-    href: "/product/claude-3-7"
+    href: "/"
   },
   {
     title: "Claude's extended thinking",
     category: "Product",
     date: "Feb 24, 2025",
-    href: "/product/extended-thinking"
+    href: "/"
   },
   {
     title: "Alignment faking in large language models",
     category: "Alignment science",
     date: "Dec 18, 2024",
-    href: "/research/alignment-faking"
+    href: "/"
   }
 ]
 
 export default function Featured() {
   return (
     <section className="max-w-7xl mx-auto px-6 py-20">
-      <h2 className="text-xl font-medium mb-8">Featured</h2>
-      <div className="space-y-6">
+      <div className="grid grid-cols-[200px_1fr] gap-16">
+        <h2 className="text-2xl font-bold">Featured</h2>
+        <div className="space-y-[1px] bg-gray-200">
         {featuredItems.map((item, index) => (
+            <div 
+              key={index}
+              className="bg-[#F7F5F2] py-6"
+            >
+              <div className="flex items-center justify-between px-6">
           <Link 
-            key={index}
             href={item.href}
-            className="block hover:bg-white rounded-lg p-4 -mx-4 transition-colors"
+                  className="text-lg font-medium flex-1 hover:text-gray-400 transition-colors"
           >
-            <div className="flex justify-between items-center">
-              <div className="space-y-1">
-                <h3 className="text-lg font-medium">{item.title}</h3>
-                <div className="flex items-center space-x-2 text-sm text-gray-600">
-                  <span>{item.category}</span>
-                  <span>•</span>
-                  <span>{item.date}</span>
+                  {item.title}
+                </Link>
+                <div className="flex items-center gap-8 text-sm">
+                  <span className="text-gray-900">{item.category}</span>
+                  <span className="text-gray-500">{item.date}</span>
                 </div>
               </div>
-              <svg 
-                className="w-5 h-5 text-gray-400"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M9 5l7 7-7 7"
-                />
-              </svg>
             </div>
-          </Link>
         ))}
+        </div>
       </div>
     </section>
   )

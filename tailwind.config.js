@@ -9,6 +9,9 @@ module.exports = {
     extend: {
       colors: {
         primary: '#FF7E5F',
+        ivory: {
+          medium: '#F7F5F2',
+        },
       },
       maxWidth: {
         '7xl': '80rem',

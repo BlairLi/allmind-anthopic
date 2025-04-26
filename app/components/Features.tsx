@@ -6,19 +6,19 @@ const features = [
     title: "Core views on AI Safety",
     icon: "/images/safety-icon.svg",
     bgColor: "bg-[#EAE7E2]",
-    href: "/safety"
+    href: "/"
   },
   {
     title: "Anthropic's Responsible Scaling Policy",
     icon: "/images/scaling-icon.svg",
     bgColor: "bg-[#D8E4E4]",
-    href: "/scaling"
+    href: "/"
   },
   {
     title: "Anthropic Academy: Learn to build with Claude",
     icon: "/images/academy-icon.svg",
     bgColor: "bg-[#E5E5EE]",
-    href: "/academy"
+    href: "/"
   }
 ]
 
@@ -30,17 +30,19 @@ export default function Features() {
           <Link 
             key={index} 
             href={feature.href}
-            className={`${feature.bgColor} p-8 rounded-lg hover:opacity-90 transition-opacity`}
+            className={`${feature.bgColor} p-12 rounded-2xl hover:opacity-90 transition-opacity flex flex-col justify-between min-h-[280px]`}
           >
-            <div className="mb-4 relative w-12 h-12">
-              <Image
-                src={feature.icon}
-                alt=""
-                fill
-                className="object-contain"
-              />
+            <div className="flex-1 flex items-center justify-center mb-8">
+              <div className="relative w-40 h-40">
+                <Image
+                  src={feature.icon}
+                  alt=""
+                  fill
+                  className="object-contain"
+                />
+              </div>
             </div>
-            <h3 className="text-xl font-bold">{feature.title}</h3>
+            <h3 className="text-2xl font-bold">{feature.title}</h3>
           </Link>
         ))}
       </div>

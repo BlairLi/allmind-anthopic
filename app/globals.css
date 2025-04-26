@@ -5,6 +5,7 @@
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-rgb: 247, 245, 242;
+  --ivory-medium: #F7F5F2;
 }
 
 body {
@@ -15,19 +16,42 @@ body {
 
 @layer components {
   .nav-link {
-    @apply text-gray-700 hover:text-black transition-colors;
+    @apply text-black hover:text-black/80 transition-colors font-normal;
   }
   
   .btn-primary {
-    @apply bg-black text-white px-4 py-2 rounded hover:bg-gray-900 transition-colors;
+    @apply bg-black text-white px-6 py-3 rounded-[16px] hover:bg-gray-900 transition-colors text-sm font-medium inline-block text-center;
   }
   
   .btn-secondary {
-    @apply border border-black px-4 py-2 rounded hover:bg-gray-100 transition-colors;
+    @apply border border-black px-6 py-3 rounded-[16px] hover:bg-gray-100 transition-colors text-sm font-medium w-full text-center;
+  }
+
+  .feature-card {
+    @apply bg-white p-8 rounded-xl flex flex-col justify-between;
   }
 }
 
 .underline-custom {
+  text-decoration: underline;
+  text-decoration-color: #000000;
   text-decoration-thickness: 2px;
-  text-underline-offset: 4px;
+  text-underline-offset: 2px;
+  text-decoration-skip-ink: none;
+}
+
+.bg-ivory-medium {
+  background-color: var(--ivory-medium);
+}
+
+.hero-background {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 40%;
+  height: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right center;
+  z-index: 1;
 }
