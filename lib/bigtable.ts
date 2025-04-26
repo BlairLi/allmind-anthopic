@@ -12,7 +12,9 @@ export interface Application {
 // Initialize Bigtable with credentials
 const bigtable = new Bigtable({
   projectId: process.env.GOOGLE_CLOUD_PROJECT || 'allmind-anthropic',
-  keyFilename: process.env.GOOGLE_APPLICATION_CREDENTIALS || './google-credentials.json',
+  credentials: process.env.GOOGLE_CREDENTIALS_JSON ? 
+    JSON.parse(process.env.GOOGLE_CREDENTIALS_JSON) : 
+    require('./google-credentials.json')
 });
 
 const instance = bigtable.instance(process.env.BIGTABLE_INSTANCE || 'allmind-instance');
