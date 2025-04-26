@@ -14,7 +14,7 @@ const bigtable = new Bigtable({
   projectId: process.env.GOOGLE_CLOUD_PROJECT || 'allmind-anthropic',
   credentials: process.env.GOOGLE_CREDENTIALS_JSON ? 
     JSON.parse(process.env.GOOGLE_CREDENTIALS_JSON) : 
-    require('./google-credentials.json')
+    {}
 });
 
 const instance = bigtable.instance(process.env.BIGTABLE_INSTANCE || 'allmind-instance');
